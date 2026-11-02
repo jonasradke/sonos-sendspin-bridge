@@ -1,0 +1,36 @@
+name: Sonos Sendspin Bridge
+version: "0.4.2"
+slug: sonos_sendspin_bridge
+url: https://github.com/jonasradke/sonos-sendspin-bridge
+description: >-
+  Makes a Sonos speaker a Sendspin player, so Music Assistant plays it in sync
+  with other Sendspin players.
+arch:
+  - amd64
+  - aarch64
+init: false
+startup: application
+boot: auto
+host_network: true
+options:
+  sonos_ip: ""
+  name: "Sonos"
+  sonos_latency_ms: 0
+  volume_trim_db: 0
+  sonos_app_sets_level: true
+  lead_ms: 2000
+  queue_ms: 1000
+  idle_keep_s: 900
+schema:
+  sonos_ip: str
+  name: str
+  host_ip: "str?"
+  server_url: "str?"
+  http_port: "port?"
+  sonos_latency_ms: "float(-1000,1000)"
+  volume_trim_db: "float(-30,40)"
+  sonos_app_sets_level: "bool?"
+  lead_ms: "int(500,10000)"
+  queue_ms: "int(300,5000)"
+  idle_keep_s: "int(0,86400)"
+  hold_mute: "bool?"
